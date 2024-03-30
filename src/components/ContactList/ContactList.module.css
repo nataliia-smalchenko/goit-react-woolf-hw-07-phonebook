@@ -8,3 +8,12 @@
 .item:not(:last-child) {
   margin-bottom: 8px;
 }
+
+.loading {
+  font-size: 24px;
+}
+
+.error {
+  font-size: 24px;
+  color: brown;
+}
