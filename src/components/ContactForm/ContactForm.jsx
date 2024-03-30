@@ -2,7 +2,6 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'store/operations';
-import { nanoid } from '@reduxjs/toolkit';
 import { selectContacts } from 'store/selectors';
 
 const ContactForm = () => {
@@ -30,7 +29,6 @@ const ContactForm = () => {
 
     dispatch(
       addContact({
-        id: nanoid(),
         name,
         phone,
       })
