@@ -24,26 +24,24 @@ const ContactList = () => {
     <>
       {isLoading && <p className={css.loading}>Loading...</p>}
       {error && <p className={css.error}>{error}</p>}
-      {!isLoading && !error && (
-        <ul className={css.list}>
-          {visibleContacts.map(item => {
-            return (
-              <li className={css.item} key={item.id}>
-                <span className={css['item-text']}>
-                  {item.name}: {item.phone}
-                </span>
-                <Button
-                  type="button"
-                  text="Delete"
-                  handleClick={() => {
-                    dispatch(deleteContact(item.id));
-                  }}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <ul className={css.list}>
+        {visibleContacts.map(item => {
+          return (
+            <li className={css.item} key={item.id}>
+              <span className={css['item-text']}>
+                {item.name}: {item.phone}
+              </span>
+              <Button
+                type="button"
+                text="Delete"
+                handleClick={() => {
+                  dispatch(deleteContact(item.id));
+                }}
+              />
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 };
